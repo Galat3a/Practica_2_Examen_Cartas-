@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'NY';
+    src: url('../font/NewYork.otf');
+}
+        body {
+            font-family: NY, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        /* Contenedores para los palos (Oros, Bastos, Espadas, Copas) */
+        .contenedorBarajasPalos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            height: 50vh; /* Ajustamos la altura a 50vh */
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Los contenedores para cada palo */
+        .contenedorOros,
+        .contenedorEspadas,
+        .contenedorCopas,
+        .contenedorBastos {
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start;
+            gap: 10px;
+            width: 22%;
+            height: 100%; 
+            padding: 10px;
+            border: 2px solid #ccc;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+            overflow-y: auto;
+            position: relative; 
+        }
+        
+        /* Contenedor general de cartas */
+        .contenedorBaraja {
+            height: 100vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 80%;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px dotted #ccc;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            overflow-x: scroll;
+        }
+        
+        /* Estilo de las cartas */
+        .carta {
+            width: 80px;
+            height: 120px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            text-align: center;
+            cursor: move;
+            position: relative;
+            transition: transform 0.2s ease, top 0.3s ease;
+        }
+        
+        .contenedorOros .carta:nth-child(n+2),
+        .contenedorEspadas .carta:nth-child(n+2),
+        .contenedorCopas .carta:nth-child(n+2),
+        .contenedorBastos .carta:nth-child(n+2) {
+            margin-top: -80px; 
+        }
+        
+        
+        .carta:hover {
+            transform: scale(1.05);
+        }
+        
+        .carta:active {
+            opacity: 0.8;
+        }
+        
+       
+        .carta div {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .carta div:nth-child(2) {
+            color: rgb(0, 0, 0);
+        }
+
+/* Estilo para el botón de reinicio */
+#resetButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#resetButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#resetButton:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}
